@@ -1,10 +1,10 @@
 import React from 'react'
+import ChildComponent from './ChildComponent'
 
-const ParentComponent = ({ children }) => {
+const ParentComponent = () => {
     return (
         <div>
-            <h2>hello</h2>
-            {children}
+            <ChildComponent></ChildComponent>
         </div>
     )
 }

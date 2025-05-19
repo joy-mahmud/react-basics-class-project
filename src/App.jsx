@@ -48,7 +48,7 @@ function App() {
     )
   }
   console.log(productData)
-
+  const user = { name: 'joy', email: 'joy@gmail.com' }
   return (
     <div className='p-5'>
       <h2 className='text-center text-2xl font-semibold'>Product Details</h2>
@@ -63,13 +63,13 @@ function App() {
       }
       {/* <ConditionalRendering>
 
-      </ConditionalRendering>
+      </ConditionalRendering> */}
 
-      <ParentComponent>
-        <h3>I am a children</h3>
-        <p>This is a demo paragraph</p>
+
+      {/* <Counter></Counter> */}
+      <ParentComponent user={user}>
+
       </ParentComponent>
-      <Counter></Counter> */}
 
     </div>
 

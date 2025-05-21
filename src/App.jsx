@@ -6,6 +6,8 @@ import ParentComponent from './components/ParentComponent'
 
 import Counter from './components/Counter'
 import { useEffect, useState } from 'react'
+import CounterUsingReducer from './components/CounterUsingReducer'
+import UseRefComponent from './components/useRefComponent'
 function App() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
@@ -48,7 +50,7 @@ function App() {
     )
   }
   console.log(productData)
-  const user = { name: 'joy', email: 'joy@gmail.com' }
+
   return (
     <div className='p-5'>
       <h2 className='text-center text-2xl font-semibold'>Product Details</h2>
@@ -67,9 +69,11 @@ function App() {
 
 
       {/* <Counter></Counter> */}
-      <ParentComponent user={user}>
+      {/* <ParentComponent user={user}>
 
-      </ParentComponent>
+      </ParentComponent> */}
+      <CounterUsingReducer />
+      <UseRefComponent />
 
     </div>
 

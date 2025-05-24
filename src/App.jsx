@@ -8,10 +8,14 @@ import Counter from './components/Counter'
 import { useEffect, useState } from 'react'
 import CounterUsingReducer from './components/CounterUsingReducer'
 import UseRefComponent from './components/useRefComponent'
+import UseWindowWidth from './hooks/UseWindowWidth'
+import FormHandle from './components/FormHandle'
 function App() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const [productData, setProductData] = useState([])
+  const width = UseWindowWidth()
+  console.log('window width:', width)
   useEffect(() => {
     // fetch('data.json')
     //   .then(res => res.json())
@@ -49,10 +53,11 @@ function App() {
       <h2 className='text-center font-bold text-xl'>Error fetching data</h2>
     )
   }
-  console.log(productData)
+  // console.log(productData)
 
   return (
     <div className='p-5'>
+
       <h2 className='text-center text-2xl font-semibold'>Product Details</h2>
 
       {/* <ProductCard name={productData1.name} price={productData1.price} isAvailable={productData1.inStock} onAddToCart={handleAddToCart}></ProductCard>
@@ -74,6 +79,15 @@ function App() {
       </ParentComponent> */}
       <CounterUsingReducer />
       <UseRefComponent />
+
+      <div className='p-5 text-center'>
+        <h2 className='text-xl font-bold'>Window width:{width}</h2>
+        {
+          width < 768 ? (<p className='text-red-700'>Mobile view</p>) : (<p className='text-green-600'>Desktop view</p>)
+        }
+      </div>
+
+      <FormHandle />
 
     </div>
 

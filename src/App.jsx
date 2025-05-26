@@ -10,6 +10,7 @@ import CounterUsingReducer from './components/CounterUsingReducer'
 import UseRefComponent from './components/useRefComponent'
 import UseWindowWidth from './hooks/UseWindowWidth'
 import FormHandle from './components/FormHandle'
+import HookForm from './components/hookForm'
 function App() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
@@ -88,6 +89,8 @@ function App() {
       </div>
 
       <FormHandle />
+
+      <HookForm />
 
     </div>
 

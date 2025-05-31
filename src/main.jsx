@@ -11,10 +11,14 @@ import {
 import CounterUsingReducer from './components/CounterUsingReducer.jsx'
 import HookForm from './components/hookForm.jsx'
 import ProductDetails from './components/ProductDetails.jsx'
+import { loadPosts, Posts } from './components/Posts.jsx'
+import Post, { loadPost } from './components/Post.jsx'
+import ErrorPage from './components/ErrorPage.jsx'
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/product-details",
@@ -25,6 +29,18 @@ const router = createBrowserRouter([
         element: <CounterUsingReducer />
 
       },
+      {
+        path: "/posts",
+        element: <Posts />,
+        loader: loadPosts
+
+      }, {
+        path: "/post/:id",
+        element: <Post />,
+        loader: loadPost,
+        errorElement: <h1>Sorry this post is not found</h1>
+      }
+
     ]
   },
 

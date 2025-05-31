@@ -39,14 +39,14 @@ function App() {
 
       {/* <UseRefComponent /> */}
 
-      <div className='p-5 text-center'>
+      {/* <div className='p-5 text-center'>
         <h2 className='text-xl font-bold'>Window width:{width}</h2>
         {
           width < 768 ? (<p className='text-red-700'>Mobile view</p>) : (<p className='text-green-600'>Desktop view</p>)
         }
       </div>
 
-      <FormHandle />
+      <FormHandle /> */}
 
     </div>
 

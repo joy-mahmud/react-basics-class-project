@@ -14,6 +14,9 @@ import ProductDetails from './components/ProductDetails.jsx'
 import { loadPosts, Posts } from './components/Posts.jsx'
 import Post, { loadPost } from './components/Post.jsx'
 import ErrorPage from './components/ErrorPage.jsx'
+import Cart from './components/Cart.jsx'
+import PrivateRoute from './privateRoute/PrivateRoute.jsx'
+import Login from './components/Login.jsx'
 const router = createBrowserRouter([
   {
     path: "/",
@@ -22,7 +25,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/product-details",
-        element: <ProductDetails />
+        element: <PrivateRoute> <ProductDetails /></PrivateRoute>
       },
       {
         path: "/counter",
@@ -39,6 +42,12 @@ const router = createBrowserRouter([
         element: <Post />,
         loader: loadPost,
         errorElement: <h1>Sorry this post is not found</h1>
+      }, {
+        path: "/cart",
+        element: <Cart />
+      }, {
+        path: '/login',
+        element: <Login />
       }
 
     ]

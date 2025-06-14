@@ -17,6 +17,8 @@ import ErrorPage from './components/ErrorPage.jsx'
 import Cart from './components/Cart.jsx'
 import PrivateRoute from './privateRoute/PrivateRoute.jsx'
 import Login from './components/Login.jsx'
+import Users from './components/Users.jsx'
+import SignUp from './components/SignUp.jsx'
 const router = createBrowserRouter([
   {
     path: "/",
@@ -45,9 +47,17 @@ const router = createBrowserRouter([
       }, {
         path: "/cart",
         element: <Cart />
-      }, {
+      },
+      {
+        path: '/signup',
+        element: <SignUp />
+      },
+      {
         path: '/login',
         element: <Login />
+      }, {
+        path: '/users',
+        element: <Users />
       }
 
     ]
